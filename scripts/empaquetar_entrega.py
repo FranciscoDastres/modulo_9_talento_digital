@@ -17,7 +17,7 @@ selected = []
 for name in ['proyecto-modulo-9-francisco-meza-dastres.pdf',
              'cv-francisco-meza-dastres.pdf', 'LEEME.md']:
     selected.append((ROOT / 'entrega' / name, Path(name)))
-for folder in ['src', 'public', 'scripts', '.github', 'docs']:
+for folder in ['src', 'public', 'scripts', '.github', 'docs', 'entrega']:
     for file in sorted((ROOT / folder).rglob('*')):
         if file.is_file():
             relative = file.relative_to(ROOT)
