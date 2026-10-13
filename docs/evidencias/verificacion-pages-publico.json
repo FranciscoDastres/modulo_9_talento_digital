@@ -1,0 +1,41 @@
+{
+  "fecha": "2026-10-13",
+  "rutas": [
+    {
+      "url": "https://franciscodastres.github.io/modulo_9_talento_digital/",
+      "status": 200,
+      "bytes": 49099
+    },
+    {
+      "url": "https://franciscodastres.github.io/modulo_9_talento_digital/desarrollo-profesional/",
+      "status": 200,
+      "bytes": 17734
+    },
+    {
+      "url": "https://franciscodastres.github.io/modulo_9_talento_digital/documents/modulo-9/proyecto-modulo-9-francisco-meza-dastres.pdf",
+      "status": 200,
+      "bytes": 64370
+    },
+    {
+      "url": "https://franciscodastres.github.io/modulo_9_talento_digital/documents/modulo-9/cv-francisco-meza-dastres.pdf",
+      "status": 200,
+      "bytes": 46699
+    },
+    {
+      "url": "https://franciscodastres.github.io/modulo_9_talento_digital/documents/modulo-9/evidencia-api.json",
+      "status": 200,
+      "bytes": 1455
+    },
+    {
+      "url": "https://franciscodastres.github.io/modulo_9_talento_digital/svg/typeScript.svg",
+      "status": 200,
+      "bytes": 1744
+    },
+    {
+      "url": "https://franciscodastres.github.io/modulo_9_talento_digital/brand/portfolio-shield.svg",
+      "status": 200,
+      "bytes": 1899
+    }
+  ],
+  "pdf_publicos_coinciden_con_entrega": true
+}

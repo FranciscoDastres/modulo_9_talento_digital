@@ -35,7 +35,11 @@ Dirección del portafolio: https://franciscodastres.github.io/modulo_9_talento_d
 
 El workflow `.github/workflows/pages.yml` compila Astro y despliega mediante GitHub Actions desde `main`. La configuración usa `site` y `base`, y los enlaces, imágenes y descargas respetan el prefijo del repositorio.
 
-Estado de este despliegue: en preparación; se confirmará con el resultado del workflow y la revisión del sitio público.
+Estado: publicado y verificado el 13 de octubre de 2026. GitHub Actions completó los jobs de compilación y despliegue. La portada, la página profesional, los documentos y los recursos comprobados responden HTTP 200. Los PDF públicos coinciden byte por byte con los archivos de entrega.
+
+Workflow verificado: https://github.com/FranciscoDastres/modulo_9_talento_digital/actions/runs/38486476245
+
+Commit del sitio desplegado: `e2f750ea30cd77149efa14acb3c8f7b116b85c6d`. La revisión del navegador comprobó escritorio y móvil, tres proyectos, navegación al perfil y cinco elementos por categoría del FODA.
 
 ## Entrega
 

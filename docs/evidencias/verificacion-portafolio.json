@@ -1,6 +1,6 @@
 {
   "fecha": "2026-10-13",
-  "ambiente": "Vista local Astro, Chromium con Playwright CLI",
+  "ambiente": "Astro estático con base de GitHub Pages; revisión local y del sitio publicado con Chromium",
   "paginas": [
     "/",
     "/desarrollo-profesional/"
@@ -38,6 +38,12 @@
     "cv_paginas": 1,
     "revision_visual": "realizada"
   },
-  "publicacion": "Pendiente: no hay sesión Vercel y el servicio alternativo exige la CLI autenticada",
+  "publicacion": {
+    "plataforma": "GitHub Pages",
+    "url": "https://franciscodastres.github.io/modulo_9_talento_digital/",
+    "estado": "Publicado y verificado",
+    "workflow": "https://github.com/FranciscoDastres/modulo_9_talento_digital/actions/runs/38486476245",
+    "commit_sitio": "e2f750ea30cd77149efa14acb3c8f7b116b85c6d"
+  },
   "limites": "La revisión cubre las ampliaciones del módulo 9. No se enviaron mensajes por Formspree ni se editó LinkedIn."
 }
