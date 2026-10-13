@@ -3,6 +3,11 @@ export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["Trebuchet MS", "Trebuchet", "Arial", "sans-serif"],
+        serif: ["Trebuchet MS", "Trebuchet", "Arial", "sans-serif"],
+        mono: ["Trebuchet MS", "Trebuchet", "Arial", "sans-serif"],
+      },
       keyframes: {
         scaleAnim: {
           '0%': { transform: 'scale(1)' },

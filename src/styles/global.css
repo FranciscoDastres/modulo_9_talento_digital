@@ -30,8 +30,15 @@ a {
 }
 button,
 input,
-textarea {
+textarea,
+select {
   font: inherit;
+}
+code,
+kbd,
+samp,
+pre {
+  font-family: inherit;
 }
 button {
   color: inherit;
