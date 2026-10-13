@@ -37,5 +37,20 @@
       "bytes": 1899
     }
   ],
-  "pdf_publicos_coinciden_con_entrega": true
+  "pdf_publicos_coinciden_con_entrega": true,
+  "navegador": {
+    "anchos_px": [
+      390,
+      1440
+    ],
+    "desbordamiento_horizontal_documento": false,
+    "foda_por_categoria": [
+      5,
+      5,
+      5,
+      5
+    ],
+    "navegacion_desde_menu": "verificada",
+    "nota": "La medición se realiza después de cargar CSS y fuentes."
+  }
 }
