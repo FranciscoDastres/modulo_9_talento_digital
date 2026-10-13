@@ -1,0 +1,75 @@
+---
+import { withBase } from "../utils/paths";
+---
+<header class="site-header">
+  <button
+    class="menu-trigger"
+    type="button"
+    id="menu-open"
+    aria-haspopup="dialog"
+    aria-controls="site-menu"
+    aria-expanded="false"
+    hidden
+    ><span class="hamburger" aria-hidden="true"><i></i><i></i></span><span
+      >Menú</span
+    ></button
+  >
+  <time id="local-time" aria-label="Hora de Santiago"></time>
+  <noscript
+    ><nav>
+      <a href="#projects">Proyectos</a><a href="#formacion">Formación</a><a href="#caso-de-estudio">Caso de estudio</a><a href={withBase("/desarrollo-profesional/")}>Perfil y FODA</a><a href="#stack">Stack</a><a
+        href="#contact">Contacto</a
+      >
+    </nav></noscript
+  >
+</header>
+<dialog id="site-menu" aria-label="Menú principal">
+  <div class="menu-shell">
+    <div class="menu-top">
+      <button
+        class="menu-close"
+        id="menu-close"
+        type="button"
+        aria-label="Cerrar menú"
+        ><span aria-hidden="true">×</span> Cerrar</button
+      >
+    </div><nav aria-label="Navegación principal">
+      {
+        [
+          { name: "Inicio", href: "#home" },
+          { name: "Proyectos", href: "#projects" },
+          { name: "Formación", href: "#formacion" },
+          { name: "Caso de estudio", href: "#caso-de-estudio" },
+          { name: "Perfil y FODA", href: withBase("/desarrollo-profesional/") },
+          { name: "Mi stack", href: "#stack" },
+          { name: "Sobre mí", href: "#about" },
+          { name: "Contacto", href: "#contact" },
+        ].map((item) => (
+          <a href={item.href}>
+            <>
+              <span>{item.name}</span>
+              <span class="menu-arrow" aria-hidden="true">
+                ↗
+              </span>
+            </>
+          </a>
+        ))
+      }
+    </nav><div class="menu-bottom">
+      <p>Ingeniero Informático<br />y Desarrollador Full Stack</p><div>
+        <a
+          href="https://github.com/FranciscoDastres"
+          target="_blank"
+          rel="noopener noreferrer">GitHub ↗</a
+        ><a
+          href="https://linkedin.com/in/francisco-meza-dastres"
+          target="_blank"
+          rel="noopener noreferrer">LinkedIn ↗</a
+        ><a href="mailto:francisco.meza.amazon.dev@gmail.com">Email ↗</a>
+      </div><span>Santiago, Chile</span>
+    </div>
+  </div>
+</dialog>
+<script>
+  import "../scripts/navigation";
+</script>

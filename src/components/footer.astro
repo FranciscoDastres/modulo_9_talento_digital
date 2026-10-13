@@ -1,0 +1,24 @@
+---
+import { withBase } from "../utils/paths";
+const year = new Date().getFullYear();
+const homeHref = Astro.url.pathname === import.meta.env.BASE_URL ? "#home" : withBase("/#home");
+const topHref = Astro.url.pathname === import.meta.env.BASE_URL ? "#home" : "#main";
+---
+
+<footer class="site-footer wrap">
+  <a href={homeHref} class="footer-name"
+    >Francisco Meza Dastres<span
+      >Ingeniero Informático y Desarrollador Full Stack</span
+    ></a
+  ><div>
+    <a
+      href="https://github.com/FranciscoDastres"
+      target="_blank"
+      rel="noopener noreferrer">GitHub ↗</a
+    ><a
+      href="https://linkedin.com/in/francisco-meza-dastres"
+      target="_blank"
+      rel="noopener noreferrer">LinkedIn ↗</a
+    ><a href={topHref}>Volver arriba ↑</a>
+  </div><p>© {year} Francisco Meza Dastres</p>
+</footer>

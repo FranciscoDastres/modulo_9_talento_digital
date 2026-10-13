@@ -1,0 +1,215 @@
+{
+  "title": "Desarrollo de un Portafolio Digital",
+  "stage": "Parte 1: Desarrollo del Portafolio",
+  "author": "Francisco Meza Dastres",
+  "date": "13 de octubre de 2026",
+  "portfolio": "https://franciscodastres.github.io/modulo_9_talento_digital/",
+  "email": "francisco.meza.amazon.dev@gmail.com",
+  "linkedin": "https://linkedin.com/in/francisco-meza-dastres",
+  "github": "https://github.com/FranciscoDastres",
+  "summary": "Soy Ingeniero Informático y Desarrollador Full Stack en Santiago de Chile. Busco aportar en un equipo de tecnología desde el desarrollo web, las APIs y el trabajo con datos. Mi portafolio reúne proyectos personales y tres proyectos del curso que muestran mi progreso desde una interfaz interactiva hasta un backend con autenticación y persistencia.",
+  "company": {
+    "name": "Mercado Libre",
+    "reason": "Elegí Mercado Libre por la relación entre comercio, pagos y desafíos de ingeniería. Mis proyectos educativos de billetera y pedidos me permiten explicar fundamentos transferibles a esos dominios. Para una posición junior, mi aporte inicial estaría en tareas acotadas de desarrollo, pruebas y documentación, mientras aprendo el stack y las prácticas del equipo.",
+    "rows": [
+      {
+        "aspect": "Valores y propósito",
+        "finding": "Su sitio de carreras vincula el comercio y los servicios financieros con el acceso de las personas en América Latina. Destaca una cultura emprendedora y el aprendizaje.",
+        "interest": "Me interesa desarrollar soluciones útiles y aprender a convertir necesidades de usuarios en funcionalidades claras.",
+        "sources": [
+          1
+        ]
+      },
+      {
+        "aspect": "Tipo de productos",
+        "finding": "Su ecosistema reúne marketplace, pagos con Mercado Pago y soluciones logísticas como Mercado Envíos.",
+        "interest": "La billetera educativa y la API de pedidos conectan mis aprendizajes con operaciones, estados y recorridos de compra.",
+        "sources": [
+          1,
+          2
+        ]
+      },
+      {
+        "aspect": "Tecnologías",
+        "finding": "El equipo documenta servicios en Java y Go y la plataforma interna Fury para construir, desplegar y operar aplicaciones.",
+        "interest": "Quiero profundizar en servicios distribuidos. Mi base en HTTP y SQL es transferible; aprender Java o Go forma parte de mi preparación para ese entorno.",
+        "sources": [
+          2,
+          3
+        ]
+      },
+      {
+        "aspect": "Metodologías de trabajo",
+        "finding": "Sus publicaciones describen equipos responsables del código, colaboración interna y pipelines comunes de compilación, pruebas y despliegue. Los modelos de ramas pueden variar entre equipos.",
+        "interest": "Me atrae un proceso donde el código se revisa y los cambios se verifican antes de liberar. Quiero contribuir con pruebas y documentación reproducible.",
+        "sources": [
+          3
+        ]
+      },
+      {
+        "aspect": "Innovación",
+        "finding": "El portal de carreras presenta la IA generativa como parte de su evolución. Fury también muestra inversión en herramientas propias para los equipos técnicos.",
+        "interest": "Me interesa aprender automatización con criterio y verificar sus resultados, sin perder comprensión del comportamiento de la aplicación.",
+        "sources": [
+          1,
+          2
+        ]
+      }
+    ],
+    "contributions": [
+      {
+        "title": "Desarrollar funcionalidades web acotadas",
+        "text": "Implementar formularios, validaciones e integración HTTP siguiendo los patrones del equipo. Aporto JavaScript y TypeScript y experiencia educativa conectando interfaz, estado y APIs.",
+        "evidence": "Alke Wallet y TaskFlow: eventos, persistencia local y consumo de una API."
+      },
+      {
+        "title": "Comprobar permisos y consistencia de datos",
+        "text": "Añadir escenarios de prueba para registros, accesos y fallos de persistencia. Puedo contribuir con HTTP, SQL y el análisis de casos de error bajo revisión de desarrolladores con experiencia.",
+        "evidence": "API del módulo 8: pruebas de propietario, JWT y rollback con PostgreSQL real."
+      },
+      {
+        "title": "Facilitar la reproducción de cambios",
+        "text": "Documentar instalación, endpoints y decisiones, preparar cambios pequeños en Git y dejar ejemplos que ayuden a quien revisa o retoma una tarea.",
+        "evidence": "Repositorio de la API: README, colección de Postman y pruebas de integración."
+      }
+    ],
+    "questions": [
+      "¿Qué tareas asumiría una persona junior durante sus primeros tres meses y cómo evalúan su progreso?",
+      "¿Qué stack utiliza el equipo de esta vacante y qué acompañamiento ofrecen para aprender sus herramientas y Fury?",
+      "¿Cómo organizan la revisión de código, las pruebas y la colaboración entre desarrollo, producto y operaciones?"
+    ]
+  },
+  "projects": [
+    {
+      "module": "Módulo 2",
+      "title": "Alke Wallet",
+      "description": "Billetera educativa con registro, sesión, depósitos, transferencias e historial. Simula fondos y autenticación con almacenamiento del navegador.",
+      "tools": "HTML, CSS, JavaScript, Bootstrap y jQuery",
+      "learning": "Conectar formularios, eventos y estado persistente en un recorrido de usuario.",
+      "repository": "https://github.com/FranciscoDastres/prueba_final_modulo_2_js"
+    },
+    {
+      "module": "Módulo 4",
+      "title": "TaskFlow",
+      "description": "Gestor de tareas con creación, edición, finalización, fechas e importación desde JSONPlaceholder. Las escrituras de la API externa son simuladas.",
+      "tools": "JavaScript ES6, POO, módulos, Fetch API y localStorage",
+      "learning": "Separar responsabilidades y manejar operaciones asíncronas y errores.",
+      "repository": "https://github.com/FranciscoDastres/prueba_modulo_4"
+    },
+    {
+      "module": "Módulo 8",
+      "title": "API de usuarios y pedidos",
+      "description": "Backend educativo con registro, login, permisos por propietario, etiquetas y carga validada de imágenes. Cuenta con pruebas locales y documentación de ejecución.",
+      "tools": "Node.js, Express, PostgreSQL, pg, Sequelize, JWT, bcrypt y Multer",
+      "learning": "Integrar autenticación, autorización, relaciones y transacciones verificables.",
+      "repository": "https://github.com/FranciscoDastres/prueba_modulo_8"
+    }
+  ],
+  "caseStudy": {
+    "title": "De un CRUD a una API con permisos y datos consistentes",
+    "sections": [
+      {
+        "title": "Actividad",
+        "text": "Desarrollar una API REST de usuarios y pedidos en el módulo 8: registro, login, CRUD, filtros, etiquetas y carga de imágenes, usando JavaScript ES6 y PostgreSQL."
+      },
+      {
+        "title": "Desafío principal",
+        "text": "Hacer que la API respetara la identidad del usuario y mantuviera datos coherentes. Un pedido debe pertenecer al usuario autenticado; un fallo al crear el perfil no debe dejar una cuenta incompleta."
+      },
+      {
+        "title": "Solución propuesta",
+        "text": "Separar rutas, controladores, middleware y servicios. Autenticar con JWT, guardar hashes con bcrypt y parametrizar consultas SQL. Crear usuario y perfil en una transacción; tomar el dueño del pedido desde el token; usar una tabla intermedia para etiquetas y restricciones reales de base de datos. Validar tamaño, extensión, MIME y cabecera de las imágenes, y limpiar archivos cuando una operación falla."
+      },
+      {
+        "title": "Herramienta técnica y elección",
+        "text": "Node.js y Express permiten organizar el servidor y reutilizar JavaScript. PostgreSQL aporta claves foráneas y transacciones para el modelo relacional. pg permite controlar SQL explícito y Sequelize consultar asociaciones. node:test comprueba el comportamiento mediante solicitudes HTTP a una base temporal."
+      },
+      {
+        "title": "Aprendizajes",
+        "text": "Autenticar y autorizar son tareas distintas. Las asociaciones del ORM no reemplazan las restricciones SQL. Una transacción se verifica provocando un fallo y revisando los datos posteriores. Una base temporal permite repetir escenarios sin alterar los datos del proyecto."
+      },
+      {
+        "title": "Habilidades técnicas",
+        "text": "Diseño de APIs REST, JavaScript ES6, modelado 1:1, 1:N y N:M, SQL parametrizado, autenticación, autorización, manejo de errores, validación de archivos, Git, Postman y pruebas de integración."
+      },
+      {
+        "title": "Justificación de la elección",
+        "text": "Este proyecto muestra mi avance desde el estado local de una interfaz hasta un servidor con identidad y persistencia. Permite explicar decisiones con código y evidencia funcional, y discutir límites y mejoras de forma concreta."
+      }
+    ]
+  },
+  "foda": [
+    {
+      "title": "Fortalezas",
+      "origin": "Interno",
+      "items": [
+        "JavaScript aplicado en interfaces y servidores, con progresión entre los proyectos del curso.",
+        "Base de modelado SQL: relaciones, restricciones y transacciones en PostgreSQL.",
+        "Capacidad para verificar escenarios de error y permisos mediante pruebas de integración.",
+        "Documentación técnica con instrucciones, endpoints y ejemplos en repositorios Git.",
+        "Iniciativa para integrar proyectos académicos y personales en un portafolio propio con Astro."
+      ]
+    },
+    {
+      "title": "Áreas de mejora",
+      "origin": "Interno",
+      "items": [
+        "Profundizar en Java o Go y traducir a ese stack lo aprendido con Node.js.",
+        "Fortalecer arquitectura distribuida, colas y tolerancia a fallos con un prototipo pequeño.",
+        "Incorporar mediciones de cobertura, carga y latencia al caso de estudio.",
+        "Automatizar las pruebas en CI y practicar revisiones de código con otras personas.",
+        "Practicar la explicación oral de decisiones y la lectura de documentación técnica en inglés."
+      ]
+    },
+    {
+      "title": "Amenazas",
+      "origin": "Externo",
+      "items": [
+        "La evolución de herramientas puede volver insuficiente un aprendizaje que no se actualiza.",
+        "La automatización puede modificar tareas iniciales y aumentar la necesidad de demostrar criterio técnico.",
+        "Una vacante puede requerir un stack distinto al de mis proyectos educativos.",
+        "Los cambios económicos pueden modificar las prioridades de contratación de las empresas.",
+        "Las expectativas de calidad y protección de datos pueden superar lo demostrado por un prototipo local."
+      ]
+    },
+    {
+      "title": "Oportunidades",
+      "origin": "Externo",
+      "items": [
+        "La expansión de productos digitales abre problemas donde aplicar desarrollo web y APIs.",
+        "Los proyectos que integran datos y servicios permiten mostrar fundamentos transferibles entre stacks.",
+        "La necesidad de verificar software ofrece espacio para aportar pruebas y documentación clara.",
+        "Las herramientas de IA pueden apoyar el aprendizaje si compruebo el código y sus resultados.",
+        "Las comunidades y repositorios abiertos permiten practicar colaboración y recibir retroalimentación."
+      ]
+    }
+  ],
+  "actionPlan": [
+    "En los próximos 30 días: preparar una explicación de cinco minutos de la API, con un escenario exitoso, uno de permisos y uno de rollback.",
+    "En los siguientes 60 días: automatizar la suite en CI y medir cobertura, sin confundirla con la cantidad de pruebas aprobadas.",
+    "En 90 días: crear un servicio pequeño en Java o Go y documentar diferencias respecto a Node.js."
+  ],
+  "marketNote": "El FODA es una autoevaluación orientada al puesto junior. Los puntos externos son riesgos y oportunidades interpretados para este perfil, tomando como contexto el Future of Jobs Report 2025; no representan estadísticas de vacantes en Chile ni una garantía de contratación.",
+  "sources": [
+    {
+      "id": 1,
+      "title": "Mercado Libre Careers: propósito, cultura y ecosistema",
+      "url": "https://career.mercadolibre.com/es/home"
+    },
+    {
+      "id": 2,
+      "title": "Equipo de Tecnología: The technological evolution at Mercado Libre (2024)",
+      "url": "https://medium.com/mercadolibre-tech/the-technological-evolution-at-mercado-libre-fb269776a4e8"
+    },
+    {
+      "id": 3,
+      "title": "Equipo de Tecnología: Safe but flexible, cultura de gestión de código (2024)",
+      "url": "https://medium.com/mercadolibre-tech/safe-but-flexible-the-devex-based-code-management-culture-at-mercado-libre-9b1dfde6f1b6"
+    },
+    {
+      "id": 4,
+      "title": "World Economic Forum: Future of Jobs Report 2025, resumen",
+      "url": "https://www.weforum.org/publications/the-future-of-jobs-report-2025/digest/"
+    }
+  ]
+}

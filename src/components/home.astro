@@ -1,0 +1,42 @@
+---
+import { Image } from "astro:assets";
+import hero from "../assets/hero-chrome.png";
+---
+
+<section id="home" class="hero-cover">
+  <div class="hero-backdrop" aria-hidden="true">
+    <Image
+      src={hero}
+      alt=""
+      widths={[768, 1280, 1920]}
+      sizes="100vw"
+      loading="eager"
+      fetchpriority="high"
+    />
+  </div>
+  <div class="hero-vignette" aria-hidden="true"></div>
+  <div class="hero-content wrap">
+    <p class="hero-location"><span class="status-dot"></span>Santiago, Chile</p>
+    <h1>
+      <span class="title-line"><span>Francisco</span></span><span
+        class="title-line"><span>Meza Dastres</span></span
+      >
+    </h1>
+    <p class="hero-role">
+      Ingeniero Informático<br />y Desarrollador Full Stack
+    </p>
+    <p class="hero-description">
+      Del primer concepto al último detalle.<br />Construyo experiencias
+      digitales con propósito.
+    </p>
+    <a class="button button-outline" href="#projects"
+      >Explorar proyectos <span aria-hidden="true">↗</span></a
+    >
+  </div>
+  <div class="hero-bottom-bar wrap">
+    <a href="#projects"
+      >Desliza para descubrir <span class="scroll-line" aria-hidden="true"
+      ></span></a
+    >
+  </div>
+</section>

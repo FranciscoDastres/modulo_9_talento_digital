@@ -1,0 +1,180 @@
+---
+import { withBase } from "../utils/paths";
+const skills = [
+  {
+    name: "TypeScript",
+    documentation: "https://www.typescriptlang.org/docs/",
+    icon: "typeScript",
+    category: "Lenguaje",
+    description:
+      "Código tipado para conectar interfaces, lógica y datos con mayor claridad. Es la base de mi trabajo en desarrollo full stack.",
+    accent: "#82b4ff",
+  },
+  {
+    name: "React",
+    documentation: "https://react.dev/learn",
+    icon: "react",
+    category: "Frontend",
+    description:
+      "Interfaces construidas con componentes, estados y recorridos que responden a la interacción de cada persona.",
+    accent: "#8cdeef",
+  },
+  {
+    name: "Node.js",
+    documentation:
+      "https://nodejs.org/en/learn/getting-started/introduction-to-nodejs",
+    icon: "nodejs",
+    category: "Backend",
+    description:
+      "Servicios y APIs que conectan la experiencia visible con las reglas y los datos de una aplicación.",
+    accent: "#a0cc92",
+  },
+  {
+    name: "PostgreSQL",
+    documentation: "https://www.postgresql.org/docs/current/",
+    icon: "postgreSQL",
+    category: "Datos",
+    description:
+      "Datos relacionados y consultas para organizar información de productos, usuarios y operaciones.",
+    accent: "#98b3d2",
+  },
+  {
+    name: "AWS",
+    documentation: "https://docs.aws.amazon.com/",
+    icon: "aws",
+    category: "Cloud",
+    description:
+      "Experiencia con servicios en la nube, especialmente EC2, para ejecutar aplicaciones y administrar sus entornos.",
+    accent: "#f2c28e",
+  },
+  {
+    name: "Docker",
+    documentation: "https://docs.docker.com/",
+    icon: "docker",
+    category: "Infraestructura",
+    description:
+      "Entornos reproducibles para desarrollar y ejecutar servicios con sus dependencias.",
+    accent: "#96c9f4",
+  },
+  {
+    name: "Tailwind CSS",
+    documentation: "https://tailwindcss.com/docs/",
+    icon: "tailwindcss",
+    category: "Diseño de interfaces",
+    description:
+      "Sistemas de estilos que permiten cuidar composición, jerarquía y adaptación a distintos tamaños de pantalla.",
+    accent: "#9cdfea",
+  },
+  {
+    name: "Astro",
+    documentation: "https://docs.astro.build/en/getting-started/",
+    icon: "astro",
+    category: "Experiencias web",
+    description:
+      "Sitios centrados en contenido y rendimiento, con componentes interactivos donde la experiencia los necesita.",
+    accent: "#eab0ce",
+  },
+  {
+    name: "Git",
+    documentation: "https://git-scm.com/docs",
+    icon: "git",
+    category: "Colaboración",
+    description:
+      "Versiones y ramas para trabajar de forma ordenada, revisar cambios y mantener la evolución de un proyecto.",
+    accent: "#efa899",
+  },
+];
+---
+
+<section id="stack" class="stack-section" aria-labelledby="stack-title">
+  <div class="wrap">
+    <div class="section-heading">
+      <div>
+        <span class="section-label">Mi stack</span><h2 id="stack-title">
+          Las herramientas.<br />La intención detrás.
+        </h2>
+      </div><p>
+        Una tecnología cobra sentido<br />cuando resuelve el problema correcto.
+      </p>
+    </div><div class="stack-layout">
+      <div class="stack-feature">
+        <div class="stack-orbit">
+          <div class="stack-ring" aria-hidden="true"></div><div
+            class="stack-ring ring-offset"
+            aria-hidden="true"
+          >
+          </div><a
+            id="stack-feature-docs"
+            href={skills[0].documentation}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Documentación oficial de TypeScript (abre en otra pestaña)"
+            ><img
+              id="stack-feature-icon"
+              src={withBase("/svg/typeScript.svg")}
+              alt=""
+              width="90"
+              height="90"
+            /></a
+          ><span class="orbit-point" aria-hidden="true"></span>
+        </div><div class="stack-feature-copy">
+          <span id="stack-feature-category">Lenguaje</span><h3
+            id="stack-feature-name"
+          >
+            TypeScript
+          </h3><p id="stack-feature-description">{skills[0].description}</p>
+        </div>
+        <div class="stack-feature-navigation" hidden>
+          <button
+            type="button"
+            class="circle-button"
+            id="stack-prev"
+            aria-label="Tecnología anterior">←</button
+          ><span id="stack-position">01 / 09</span><button
+            type="button"
+            class="circle-button"
+            id="stack-next"
+            aria-label="Tecnología siguiente">→</button
+          >
+        </div>
+      </div><div class="stack-grid" aria-label="Explorar tecnologías">
+        {
+          skills.map((skill, i) => (
+            <a
+              class="stack-card"
+              href={skill.documentation}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Documentación oficial de ${skill.name} (abre en otra pestaña)`}
+              data-selected={i === 0 ? "true" : "false"}
+              aria-controls="stack-feature-name stack-feature-description"
+              data-name={skill.name}
+              data-icon={skill.icon}
+              data-category={skill.category}
+              data-description={skill.description}
+              style={`--skill-accent:${skill.accent}`}
+            >
+              <>
+                <img
+                  src={withBase(`/svg/${skill.icon}.svg`)}
+                  width="36"
+                  height="36"
+                  alt=""
+                  loading="lazy"
+                />
+                <span class="stack-card-name">{skill.name}</span>
+                <span class="stack-card-category">{skill.category}</span>
+                <span class="stack-card-arrow" aria-hidden="true">
+                  ↗
+                </span>
+              </>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  import "../scripts/stack";
+</script>

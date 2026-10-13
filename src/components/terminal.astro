@@ -1,0 +1,149 @@
+---
+interface TerminalLine {
+  cmd: string;
+  out: string[];
+}
+
+const lines: TerminalLine[] = [
+  {
+    cmd: "whoami",
+    out: ["Francisco Meza · Desarrollador Full Stack TypeScript"],
+  },
+  {
+    cmd: "cat stack.txt",
+    out: ["React · NestJS · Express · PostgreSQL · Docker"],
+  },
+  {
+    cmd: "aws ec2 describe-instances",
+    out: ["☁ 1 año desplegando en AWS — EC2 · S3 · RDS · IAM"],
+  },
+  {
+    cmd: "ls ~/proyectos",
+    out: ["black-michi-estudio/  stomp-tracker/  pc-builder/  d-racing-pro/"],
+  },
+  {
+    cmd: "git status",
+    out: ["✔ Disponible para nuevos desafíos"],
+  },
+];
+---
+
+<div
+  id="terminal-card"
+  data-lines={JSON.stringify(lines)}
+  class="w-full max-w-xl rounded-2xl border border-[var(--white-icon-tr)] bg-[#1414149c] overflow-hidden shadow-lg font-mono text-sm"
+>
+  <div
+    class="flex items-center gap-2 px-4 py-3 border-b border-[var(--white-icon-tr)] bg-[#1a1a1a]"
+  >
+    <span class="size-3 rounded-full bg-[#ff5f57]"></span>
+    <span class="size-3 rounded-full bg-[#febc2e]"></span>
+    <span class="size-3 rounded-full bg-[#28c840]"></span>
+    <span class="ml-3 text-xs text-[var(--white-icon)]">
+      francisco@dev — ~/portafolio
+    </span>
+  </div>
+
+  <div
+    id="terminal-body"
+    class="p-4 h-[240px] md:h-[252px] overflow-hidden text-[var(--white-icon)] leading-relaxed"
+    aria-label="Terminal con resumen del perfil de Francisco Meza"
+  >
+    <noscript>
+      {
+        lines.map((line) => (
+          <div>
+            <p>
+              <span class="text-[var(--sec)]">$</span> {line.cmd}
+            </p>
+            {line.out.map((o) => (
+              <p class="text-[var(--white)]">{o}</p>
+            ))}
+          </div>
+        ))
+      }
+    </noscript>
+  </div>
+</div>
+
+<script>
+  const card = document.getElementById("terminal-card");
+  const body = document.getElementById("terminal-body");
+
+  if (card && body) {
+    const lines: { cmd: string; out: string[] }[] = JSON.parse(
+      card.dataset.lines || "[]",
+    );
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    const promptSpan = () => {
+      const s = document.createElement("span");
+      s.textContent = "$ ";
+      s.style.color = "var(--sec)";
+      return s;
+    };
+
+    const addOutput = (text: string) => {
+      const p = document.createElement("p");
+      p.textContent = text;
+      p.style.color = "var(--white)";
+      body.appendChild(p);
+    };
+
+    if (reducedMotion) {
+      for (const line of lines) {
+        const p = document.createElement("p");
+        p.appendChild(promptSpan());
+        p.appendChild(document.createTextNode(line.cmd));
+        body.appendChild(p);
+        line.out.forEach(addOutput);
+      }
+    } else {
+      const cursor = document.createElement("span");
+      cursor.textContent = "▋";
+      cursor.style.color = "var(--sec)";
+      cursor.style.animation = "terminal-blink 1s step-end infinite";
+
+      const sleep = (ms: number) =>
+        new Promise((resolve) => setTimeout(resolve, ms));
+
+      const run = async () => {
+        while (true) {
+          body.innerHTML = "";
+          for (const line of lines) {
+            const p = document.createElement("p");
+            p.appendChild(promptSpan());
+            const cmdText = document.createTextNode("");
+            p.appendChild(cmdText);
+            p.appendChild(cursor);
+            body.appendChild(p);
+
+            for (const char of line.cmd) {
+              cmdText.textContent += char;
+              await sleep(45);
+            }
+            await sleep(350);
+            for (const out of line.out) {
+              addOutput(out);
+              await sleep(120);
+            }
+            body.lastElementChild?.appendChild(cursor);
+            await sleep(1400);
+          }
+          await sleep(3500);
+        }
+      };
+      run();
+    }
+  }
+</script>
+
+<style is:global>
+  @keyframes terminal-blink {
+    50% {
+      opacity: 0;
+    }
+  }
+</style>

@@ -1,0 +1,53 @@
+<section class="process-section wrap" aria-labelledby="process-title">
+  <div class="process-intro">
+    <span class="section-label">De la idea al producto</span><h2
+      id="process-title"
+    >
+      Buen código.<br />Un proceso claro.
+    </h2><p>
+      Así llevo una idea desde la primera conversación hasta una experiencia que
+      puedas usar.
+    </p><a class="text-link" href="#contact"
+      >Hablemos de tu proyecto <span aria-hidden="true">↗</span></a>
+  </div><div class="process-steps">
+    {
+      [
+        {
+          title: "Entender",
+          description:
+            "Primero, el problema. Definimos qué necesitas, para quién construimos y qué debe resolver el producto.",
+        },
+        {
+          title: "Diseñar",
+          description:
+            "Damos forma a la experiencia: estructura, navegación e interfaz. Cada decisión tiene una razón.",
+        },
+        {
+          title: "Construir",
+          description:
+            "Conectamos la interfaz con la lógica del producto, cuidando rendimiento, integración y mantenimiento.",
+        },
+        {
+          title: "Lanzar",
+          description:
+            "Probamos el recorrido completo, desplegamos y dejamos una base que pueda seguir creciendo.",
+        },
+      ].map((step, i) => (
+        <details class="process-step" open={i === 0}>
+          <>
+            <summary>
+              <>
+                <span class="step-number">0{i + 1}</span>
+                <h3>{step.title}</h3>
+                <span class="step-toggle" aria-hidden="true">
+                  +
+                </span>
+              </>
+            </summary>
+            <p>{step.description}</p>
+          </>
+        </details>
+      ))
+    }
+  </div>
+</section>

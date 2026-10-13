@@ -1,0 +1,184 @@
+---
+import { Image } from "astro:assets";
+import { projects } from "../data/projects";
+import { projectDetails } from "../data/project-details";
+import ProjectList from "./projectList.astro";
+---
+
+<section id="projects" class="work-section" aria-labelledby="projects-title">
+  <div class="wrap section-heading">
+    <div>
+      <span class="section-label">Selección de proyectos</span><h2
+        id="projects-title"
+      >
+        Ideas en acción.
+      </h2>
+    </div><p>
+      Cada producto tiene una historia.<br />Explora la experiencia y lo que hay
+      detrás.
+    </p>
+  </div>
+  <div
+    class="project-showcase wrap"
+    role="region"
+    aria-roledescription="carrusel"
+    aria-label="Proyectos de Francisco"
+    tabindex="0"
+  >
+    <div class="carousel-viewport">
+      <div class="carousel-track">
+        {
+          projects.map((project, i) => (
+            <div
+              class="carousel-slide"
+              role="group"
+              aria-roledescription="diapositiva"
+              aria-label={`${i + 1} de ${projects.length}: ${project.title}`}
+            >
+              <div class="slide-heading">
+                <>
+                  <span>{projectDetails[i].category}</span>
+                  <h3>{project.title}</h3>
+                </>
+              </div>
+              <a
+                class={`project-visual visual-${i}`}
+                href={project.preview}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Abrir ${project.title} en otra pestaña`}
+              >
+                <>
+                  <div class="project-image-backdrop" aria-hidden="true">
+                    <Image
+                      src={project.image}
+                      alt=""
+                      width={800}
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="project-screen">
+                    <>
+                      <div class="screen-top">
+                        <>
+                          <span class="window-dots" aria-hidden="true">
+                            ● ● ●
+                          </span>
+                          <span>{project.title}</span>
+                          <span aria-hidden="true">↗</span>
+                        </>
+                      </div>
+                      <Image
+                        src={project.image}
+                        alt={`Interfaz de ${project.title}`}
+                        widths={[640, 1024, 1440]}
+                        sizes="(max-width: 600px) 90vw, 85vw"
+                        loading="lazy"
+                      />
+                    </>
+                  </div>
+                </>
+              </a>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+    <div class="carousel-controls" hidden>
+      <button
+        class="slide-prev circle-button"
+        type="button"
+        aria-label="Proyecto anterior">←</button
+      ><div class="carousel-thumbs" aria-label="Seleccionar proyecto">
+        {
+          projects.map((project, i) => (
+            <button
+              type="button"
+              data-slide={i}
+              aria-label={`Ver ${project.title}`}
+              aria-current={i === 0 ? "true" : "false"}
+            >
+              <>
+                <Image src={project.image} alt="" width={180} loading="lazy" />
+                <span>{project.title}</span>
+              </>
+            </button>
+          ))
+        }
+      </div><button
+        class="slide-next circle-button"
+        type="button"
+        aria-label="Proyecto siguiente">→</button
+      ><button
+        class="carousel-play circle-button"
+        type="button"
+        aria-pressed="false"
+        aria-label="Activar cambio automático de proyectos">▷</button
+      >
+    </div>
+    <p class="carousel-announcement sr-only" role="status" aria-live="polite">
+    </p>
+    <div class="project-information">
+      {
+        projects.map((project, i) => (
+          <article
+            class="project-panel"
+            data-panel={i}
+            aria-labelledby={`project-heading-${i}`}
+          >
+            <>
+              <div class="project-intro">
+                <>
+                  <p class="project-status">
+                    <span class="status-dot" />
+                    {project.status}
+                  </p>
+                  <h3 id={`project-heading-${i}`}>
+                    {projectDetails[i].heading}
+                  </h3>
+                  <p>{projectDetails[i].story}</p>
+                  <div class="project-links">
+                    <>
+                      <a
+                        class="button button-light"
+                        href={project.preview}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Explorar demo <span aria-hidden="true">↗</span>
+                      </a>
+                    </>
+                  </div>
+                </>
+              </div>
+              <div class="project-specs">
+                <>
+                  <h4>Dentro del proyecto</h4>
+                  <ul class="feature-list">
+                    {projectDetails[i].features.map((feature) => (
+                      <li>
+                        <span aria-hidden="true">↳</span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <h4>Tecnologías</h4>
+                  <ul class="tech-tags">
+                    {project.technologies.map((tech) => (
+                      <li>{tech}</li>
+                    ))}
+                  </ul>
+                  <p>{projectDetails[i].focus}</p>
+                </>
+              </div>
+            </>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+  <ProjectList />
+</section>
+<script>
+  import "../scripts/carousel";
+</script>

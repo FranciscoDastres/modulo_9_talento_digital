@@ -1,0 +1,41 @@
+export const courseProjects = [
+  {
+    module: "Módulo 2",
+    title: "Alke Wallet",
+    description: "Prototipo de billetera digital con registro, sesión, depósitos, transferencias e historial de movimientos.",
+    learning: "Aprendí a conectar formularios, eventos y estado persistente para construir un recorrido completo de usuario.",
+    tools: ["HTML", "CSS", "JavaScript", "Bootstrap", "jQuery"],
+    repository: "https://github.com/FranciscoDastres/prueba_final_modulo_2_js",
+    scope: "Simulación educativa con localStorage; utiliza fondos ficticios y autenticación de demostración.",
+    visual: "wallet",
+  },
+  {
+    module: "Módulo 4",
+    title: "TaskFlow",
+    description: "Gestor de tareas con creación, edición, finalización, fechas límite e importación desde JSONPlaceholder.",
+    learning: "Separé el modelo, la gestión de tareas y el cliente HTTP usando clases y módulos ES6; apliqué async/await y manejo de errores.",
+    tools: ["JavaScript ES6", "POO", "Fetch API", "localStorage"],
+    repository: "https://github.com/FranciscoDastres/prueba_modulo_4",
+    scope: "Aplicación educativa: las tareas locales persisten en el navegador y la API externa simula las escrituras.",
+    visual: "tasks",
+  },
+  {
+    module: "Módulo 8",
+    title: "API de usuarios y pedidos",
+    description: "API REST con registro, login, permisos por propietario, pedidos con etiquetas y carga validada de imágenes.",
+    learning: "Integré autenticación, transacciones y relaciones 1:1, 1:N y N:M, y comprobé el comportamiento con HTTP y PostgreSQL reales.",
+    tools: ["Node.js", "Express", "PostgreSQL", "Sequelize", "JWT"],
+    repository: "https://github.com/FranciscoDastres/prueba_modulo_8",
+    scope: "Backend educativo verificado localmente. El repositorio incluye instrucciones, pruebas y colección de Postman.",
+    visual: "api",
+  },
+];
+
+export const caseStudy = {
+  title: "De un CRUD a una API con permisos y datos consistentes",
+  date: "13 de octubre de 2026",
+  tests: 10,
+  requests: 56,
+  repository: "https://github.com/FranciscoDastres/prueba_modulo_8",
+  sourceCommit: "52d5224",
+};

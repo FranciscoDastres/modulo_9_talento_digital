@@ -1,0 +1,43 @@
+{
+  "fecha": "2026-10-13",
+  "ambiente": "Vista local Astro, Chromium con Playwright CLI",
+  "paginas": [
+    "/",
+    "/desarrollo-profesional/"
+  ],
+  "anchos_verificados_px": [
+    1440,
+    390
+  ],
+  "desbordamiento_horizontal_del_documento": false,
+  "proyectos_del_curso": 3,
+  "aspectos_empresa": 5,
+  "aportes": 3,
+  "preguntas_entrevista": 3,
+  "foda_elementos_por_categoria": [
+    5,
+    5,
+    5,
+    5
+  ],
+  "anclas_locales_rotas": 0,
+  "descargas_locales_http": {
+    "proyecto.pdf": 200,
+    "cv.pdf": 200,
+    "evidencia-api.json": 200
+  },
+  "errores_consola_pagina_profesional": 0,
+  "build": {
+    "errores": 0,
+    "advertencias": 0,
+    "hints": 0,
+    "paginas": 2
+  },
+  "pdf": {
+    "proyecto_paginas": 8,
+    "cv_paginas": 1,
+    "revision_visual": "realizada"
+  },
+  "publicacion": "Pendiente: no hay sesión Vercel y el servicio alternativo exige la CLI autenticada",
+  "limites": "La revisión cubre las ampliaciones del módulo 9. No se enviaron mensajes por Formspree ni se editó LinkedIn."
+}

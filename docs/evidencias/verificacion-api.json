@@ -1,0 +1,41 @@
+{
+  "proyecto": "API de usuarios y pedidos - Módulo 8",
+  "fecha": "2026-10-13",
+  "entorno": "Local, Node.js y PostgreSQL real; base temporal creada y eliminada por las pruebas",
+  "comando": "npm test",
+  "commit_fuente": "52d52240c4cbeb5da311ec735556544771a2af3b",
+  "repositorio": "https://github.com/FranciscoDastres/prueba_modulo_8",
+  "pruebas": {
+    "total": 10,
+    "aprobadas": 10,
+    "fallidas": 0,
+    "omitidas": 0,
+    "escenarios": [
+      "Contenido público y rechazo de rutas sin token",
+      "Registro, validaciones, duplicados y hash de contraseña",
+      "Login y rechazo de tokens alterados o vencidos",
+      "Consulta y actualización de usuarios con permisos",
+      "CRUD de pedidos, filtros y etiquetas N:M",
+      "Aislamiento de pedidos entre propietarios",
+      "Carga y reemplazo de imágenes y rechazo de archivos inválidos",
+      "Rollback del registro ante un fallo al crear el perfil",
+      "Respuesta uniforme ante JSON inválido",
+      "Eliminación de cuenta, relaciones y archivo; token invalidado"
+    ]
+  },
+  "solicitudes_http_registradas": 56,
+  "codigos_http_registrados": [
+    200,
+    201,
+    400,
+    401,
+    403,
+    404,
+    409
+  ],
+  "rollback": {
+    "prueba": "una falla en el perfil revierte también el alta del usuario",
+    "usuarios_persistidos": 0
+  },
+  "alcance": "Pruebas funcionales de integración. No se midió porcentaje de cobertura, carga, latencia ni impacto comercial."
+}

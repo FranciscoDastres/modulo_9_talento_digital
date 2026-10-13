@@ -1,0 +1,23 @@
+# Dependencias, compilación y trabajo local
+node_modules/
+dist/
+.astro/
+.venv/
+.trabajo/
+.vercel/
+.playwright-cli/
+output/
+**/__pycache__/
+*.pyc
+
+# Consigna y archivos comprimidos locales
+docs/consigna-modulo-9.pdf
+*.zip
+*.rar
+*.tgz
+*.deb
+
+# Configuración privada
+.env
+.env.*
+!.env.example
