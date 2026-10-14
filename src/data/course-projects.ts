@@ -8,6 +8,8 @@ export const courseProjects = [
     repository: "https://github.com/FranciscoDastres/prueba_final_modulo_2_js",
     scope: "Simulación educativa con localStorage; utiliza fondos ficticios y autenticación de demostración.",
     visual: "wallet",
+    demo: "/demos/alke-wallet/login.html",
+    demoLabel: "Probar Alke Wallet",
   },
   {
     module: "Módulo 4",
@@ -18,6 +20,8 @@ export const courseProjects = [
     repository: "https://github.com/FranciscoDastres/prueba_modulo_4",
     scope: "Aplicación educativa: las tareas locales persisten en el navegador y la API externa simula las escrituras.",
     visual: "tasks",
+    demo: "/demos/taskflow/index.html",
+    demoLabel: "Probar TaskFlow",
   },
   {
     module: "Módulo 8",
@@ -28,6 +32,8 @@ export const courseProjects = [
     repository: "https://github.com/FranciscoDastres/prueba_modulo_8",
     scope: "Backend educativo verificado localmente. El repositorio incluye instrucciones, pruebas y colección de Postman.",
     visual: "api",
+    demo: "/demos/api/",
+    demoLabel: "Explorar respuestas de la API",
   },
 ];
 

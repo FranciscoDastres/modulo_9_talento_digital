@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es-CL">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Inicio de sesión de la billetera digital"
+    />
+    <title>Billetera | Iniciar sesión</title>
+    <link rel="icon" href="./assets/img/logoTD/js_logo.png" />
+    <link
+      href="./assets/vendor/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+      <link rel="stylesheet" href="./assets/css/demo.css" />
+  </head>
+
+  <body class="app-page">
+    <nav class="demo-bar" aria-label="Navegación de la demo"><a href="../../#formacion">Volver al portafolio</a><span>Alke Wallet · Demo con fondos ficticios</span><button type="button" id="reset-wallet-demo">Reiniciar ejemplo</button></nav>
+    <main class="app-shell">
+      <section class="app-hero" aria-labelledby="welcome-title">
+        <div>
+          <img
+            class="brand-logo"
+            src="./assets/img/logoTD/js_logo.png"
+            alt="Logo Talento Digital JS"
+          />
+          <h1 id="welcome-title">Mi billetera digital</h1>
+          <p>Explora depósitos, transferencias e historial con dinero ficticio.</p>
+        </div>
+      </section>
+
+      <section class="app-panel" aria-labelledby="login-title">
+        <p class="section-label">Demo interactiva</p>
+        <h2 id="login-title">Inicia sesión</h2>
+        <p class="text-secondary mb-4">
+          Prueba el ejemplo sin registrarte o usa una cuenta local de demostración.
+        </p>
+
+        <div id="alert-container" aria-live="polite"></div>
+
+        <button id="enter-wallet-demo" class="btn btn-success w-100 py-3 mb-4" type="button">Probar con datos de ejemplo</button>
+        <form id="loginForm">
+          <div class="mb-3">
+            <label class="form-label" for="email">Correo electrónico</label>
+            <input
+              class="form-control"
+              id="email"
+              name="email"
+              type="email"
+              placeholder="nombre@correo.com"
+              autocomplete="email"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label" for="password">Contraseña</label>
+            <input
+              class="form-control"
+              id="password"
+              name="password"
+              type="password"
+              placeholder="Tu contraseña"
+              autocomplete="current-password"
+              required
+            />
+          </div>
+
+          <button class="btn btn-primary w-100 py-3" type="submit">
+            Iniciar sesión
+          </button>
+        </form>
+
+        <!-- Enlace a registro -->
+        <p class="text-center mt-3">
+          ¿No tienes cuenta?
+          <a href="register.html" class="text-decoration-none"
+            >Regístrate aquí</a
+          >
+        </p>
+      </section>
+    </main>
+
+    <script
+      src="./assets/vendor/jquery.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./assets/js/billetera.js"></script>
+    <script src="./assets/js/demo.js"></script>
+    <script src="./assets/js/login.js"></script>
+  </body>
+</html>

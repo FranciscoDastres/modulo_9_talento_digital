@@ -19,3 +19,11 @@ El documento cubre la investigación de empresa, tres aportes, tres preguntas pa
 Repositorio: https://github.com/FranciscoDastres/modulo_9_talento_digital
 
 Al descomprimir el ZIP o RAR, `codigo_fuente/` contiene el proyecto Astro. Dentro de esa carpeta: ejecutar `npm ci`, `npm run build` y `npm run preview`. La vista local se sirve en `/modulo_9_talento_digital/`. Las evidencias están en `codigo_fuente/docs/evidencias/`.
+
+## Probar los proyectos
+
+- Alke Wallet: https://franciscodastres.github.io/modulo_9_talento_digital/demos/alke-wallet/login.html
+- TaskFlow: https://franciscodastres.github.io/modulo_9_talento_digital/demos/taskflow/index.html
+- Respuestas verificadas de la API: https://franciscodastres.github.io/modulo_9_talento_digital/demos/api/
+
+En la billetera, usar «Probar con datos de ejemplo». Los fondos son ficticios y los datos se guardan en el navegador. El visor de la API muestra resultados registrados; no ejecuta un servidor.

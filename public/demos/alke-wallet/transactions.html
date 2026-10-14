@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es-CL">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Últimos movimientos de la billetera" />
+    <title>Billetera | Últimos movimientos</title>
+    <link rel="icon" href="./assets/img/logoTD/js_logo.png" />
+    <link
+      href="./assets/vendor/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+      <link rel="stylesheet" href="./assets/css/demo.css" />
+  </head>
+
+  <body class="app-page">
+    <nav class="demo-bar" aria-label="Navegación de la demo"><a href="../../#formacion">Volver al portafolio</a><span>Alke Wallet · Demo con fondos ficticios</span><button type="button" id="reset-wallet-demo">Reiniciar ejemplo</button></nav>
+    <main class="app-shell">
+      <section class="app-hero" aria-labelledby="transactions-title">
+        <div>
+          <img
+            class="brand-logo"
+            src="./assets/img/logoTD/js_logo.png"
+            alt="Logo Talento Digital JS"
+          />
+          <h1 id="transactions-title">Últimos movimientos</h1>
+          <p>Revisa tus depósitos y envíos ordenados desde el más reciente.</p>
+        </div>
+      </section>
+
+      <section class="app-panel" aria-labelledby="activity-title">
+        <a href="menu.html" class="btn btn-outline-secondary mb-3">
+          ← Volver al menú
+        </a>
+        <p class="section-label">Actividad</p>
+        <h2 id="activity-title">Tus operaciones</h2>
+
+        <div class="balance-card my-3">
+          <span>Saldo disponible (CLP)</span>
+          <strong id="saldo-transacciones">$0</strong>
+        </div>
+
+        <div id="transaction-alert" aria-live="polite"></div>
+
+        <form id="filtro-form" class="mb-3">
+          <label class="form-label" for="filtro-tipo">
+            Filtrar por tipo de movimiento
+          </label>
+          <select id="filtro-tipo" class="form-select">
+            <option value="todos" selected>Todos los movimientos</option>
+            <option value="deposito">💰 Depósitos</option>
+            <option value="transferencia">💸 Transferencias enviadas</option>
+            <option value="ingreso">📥 Transferencias recibidas</option>
+            <option value="retiro">💳 Retiros</option>
+          </select>
+        </form>
+
+        <div id="sin-movimientos" class="empty-state d-none text-center p-5">
+          <div style="font-size: 48px; margin-bottom: 16px">📭</div>
+          <strong class="d-block">Aún no hay movimientos</strong>
+          <span class="text-muted"
+            >Los depósitos y envíos aparecerán aquí.</span
+          >
+        </div>
+
+        <ul
+          id="lista-movimientos"
+          class="list-group transaction-list"
+          aria-label="Lista de últimos movimientos"
+          style="list-style: none; padding: 0"
+        ></ul>
+      </section>
+    </main>
+
+    <script
+      src="./assets/vendor/jquery.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./assets/js/billetera.js"></script>
+    <script src="./assets/js/demo.js"></script>
+    <script src="./assets/js/transactions.js"></script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+:root { --bs-body-font-family: "Trebuchet MS", Trebuchet, Arial, sans-serif; }
+body, button, input, textarea, select { font-family: "Trebuchet MS", Trebuchet, Arial, sans-serif; }
+.app-page { grid-template-rows: auto 1fr; row-gap: 1rem; }
+.demo-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; width: min(100%, 1040px); font-size: 13px; color: #425169; }
+.demo-bar a { color: #174ba5; text-underline-offset: 4px; }
+.demo-bar button { background: #fff; border: 1px solid #c1cde0; padding: 8px 12px; border-radius: 6px; color: #174ba5; }
+.demo-bar :focus-visible { outline: 2px solid #174ba5; outline-offset: 3px; }
+.app-panel { overflow-wrap: anywhere; }
+@media (max-width: 600px) {
+  .demo-bar span { flex-basis: 100%; order: 1; }
+  .transaction-item .d-flex { flex-wrap: wrap; gap: 8px; }
+  .transaction-item .flex-grow-1 { min-width: 0; }
+}

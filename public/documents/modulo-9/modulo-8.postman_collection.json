@@ -1,0 +1,565 @@
+{
+  "info": {
+    "name": "Módulo 8 - Usuarios y pedidos",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Ejecuta Flujo completo en orden. Usa una cuenta temporal y la elimina al final. Para probar imágenes, ejecuta registro/login y selecciona un archivo en la carpeta Carga manual antes de eliminar la cuenta."
+  },
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000"
+    },
+    {
+      "key": "email",
+      "value": ""
+    },
+    {
+      "key": "token",
+      "value": ""
+    },
+    {
+      "key": "usuario_id",
+      "value": ""
+    },
+    {
+      "key": "pedido_id",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "Flujo completo",
+      "item": [
+        {
+          "name": "01 - Ruta protegida sin token",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{base_url}}/usuarios",
+            "auth": {
+              "type": "noauth"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP 401', () => pm.response.to.have.status(401));",
+                  "const body = pm.response.json();",
+                  "pm.test('Formato consistente', () => pm.expect(body).to.have.all.keys('status', 'message', 'data'));",
+                  "pm.test('Sin contraseña expuesta', () => pm.expect(pm.response.text()).not.to.include('\"password\"'));"
+                ]
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.collectionVariables.set('email', `prueba.${Date.now()}@example.test`);",
+                  "pm.collectionVariables.set('token', '');"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "02 - Registrar cuenta",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{base_url}}/registro",
+            "auth": {
+              "type": "noauth"
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Ana Postman\",\n  \"email\": \"{{email}}\",\n  \"password\": \"ClaveEjemplo123\",\n  \"biografia\": \"Prueba del módulo 8\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP 201', () => pm.response.to.have.status(201));",
+                  "const body = pm.response.json();",
+                  "pm.test('Formato consistente', () => pm.expect(body).to.have.all.keys('status', 'message', 'data'));",
+                  "pm.test('Sin contraseña expuesta', () => pm.expect(pm.response.text()).not.to.include('\"password\"'));",
+                  "pm.collectionVariables.set('usuario_id', body.data.id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "03 - Iniciar sesión",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{base_url}}/login",
+            "auth": {
+              "type": "noauth"
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"{{email}}\",\n  \"password\": \"ClaveEjemplo123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+                  "const body = pm.response.json();",
+                  "pm.test('Formato consistente', () => pm.expect(body).to.have.all.keys('status', 'message', 'data'));",
+                  "pm.test('Sin contraseña expuesta', () => pm.expect(pm.response.text()).not.to.include('\"password\"'));",
+                  "pm.collectionVariables.set('token', body.data.token);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "04 - Listar usuarios",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{base_url}}/usuarios"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+                  "const body = pm.response.json();",
+                  "pm.test('Formato consistente', () => pm.expect(body).to.have.all.keys('status', 'message', 'data'));",
+                  "pm.test('Sin contraseña expuesta', () => pm.expect(pm.response.text()).not.to.include('\"password\"'));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "05 - Buscar usuarios",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{base_url}}/usuarios?buscar=Postman"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+                  "const body = pm.response.json();",
+                  "pm.test('Formato consistente', () => pm.expect(body).to.have.all.keys('status', 'message', 'data'));",
+                  "pm.test('Sin contraseña expuesta', () => pm.expect(pm.response.text()).not.to.include('\"password\"'));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "06 - Actualizar mi cuenta",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{base_url}}/usuarios/{{usuario_id}}",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Ana Actualizada\",\n  \"email\": \"{{email}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+                  "const body = pm.response.json();",
+                  "pm.test('Formato consistente', () => pm.expect(body).to.have.all.keys('status', 'message', 'data'));",
+                  "pm.test('Sin contraseña expuesta', () => pm.expect(pm.response.text()).not.to.include('\"password\"'));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "07 - Crear pedido",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{base_url}}/pedidos",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"descripcion\": \"Repuestos\",\n  \"monto\": 15000,\n  \"estado\": \"pendiente\",\n  \"etiquetas\": [\n    \"taller\",\n    \"urgente\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP 201', () => pm.response.to.have.status(201));",
+                  "const body = pm.response.json();",
+                  "pm.test('Formato consistente', () => pm.expect(body).to.have.all.keys('status', 'message', 'data'));",
+                  "pm.test('Sin contraseña expuesta', () => pm.expect(pm.response.text()).not.to.include('\"password\"'));",
+                  "pm.collectionVariables.set('pedido_id', body.data.id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "08 - Buscar pedidos pendientes",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{base_url}}/pedidos?buscar=Repuestos&estado=pendiente"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+                  "const body = pm.response.json();",
+                  "pm.test('Formato consistente', () => pm.expect(body).to.have.all.keys('status', 'message', 'data'));",
+                  "pm.test('Sin contraseña expuesta', () => pm.expect(pm.response.text()).not.to.include('\"password\"'));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "09 - Actualizar pedido",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{base_url}}/pedidos/{{pedido_id}}",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"descripcion\": \"Repuestos\",\n  \"monto\": 15000,\n  \"estado\": \"pagado\",\n  \"etiquetas\": [\n    \"taller\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+                  "const body = pm.response.json();",
+                  "pm.test('Formato consistente', () => pm.expect(body).to.have.all.keys('status', 'message', 'data'));",
+                  "pm.test('Sin contraseña expuesta', () => pm.expect(pm.response.text()).not.to.include('\"password\"'));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "10 - Consultar relaciones ORM",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{base_url}}/orm/usuarios-pedidos"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+                  "const body = pm.response.json();",
+                  "pm.test('Formato consistente', () => pm.expect(body).to.have.all.keys('status', 'message', 'data'));",
+                  "pm.test('Sin contraseña expuesta', () => pm.expect(pm.response.text()).not.to.include('\"password\"'));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "11 - Registro duplicado",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{base_url}}/registro",
+            "auth": {
+              "type": "noauth"
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Ana Postman\",\n  \"email\": \"{{email}}\",\n  \"password\": \"ClaveEjemplo123\",\n  \"biografia\": \"Prueba del módulo 8\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP 409', () => pm.response.to.have.status(409));",
+                  "const body = pm.response.json();",
+                  "pm.test('Formato consistente', () => pm.expect(body).to.have.all.keys('status', 'message', 'data'));",
+                  "pm.test('Sin contraseña expuesta', () => pm.expect(pm.response.text()).not.to.include('\"password\"'));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "12 - Monto inválido",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{base_url}}/pedidos",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"descripcion\": \"Repuestos\",\n  \"monto\": -1,\n  \"estado\": \"pendiente\",\n  \"etiquetas\": [\n    \"taller\",\n    \"urgente\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP 400', () => pm.response.to.have.status(400));",
+                  "const body = pm.response.json();",
+                  "pm.test('Formato consistente', () => pm.expect(body).to.have.all.keys('status', 'message', 'data'));",
+                  "pm.test('Sin contraseña expuesta', () => pm.expect(pm.response.text()).not.to.include('\"password\"'));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "13 - Consultar pedido",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{base_url}}/pedidos/{{pedido_id}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+                  "const body = pm.response.json();",
+                  "pm.test('Formato consistente', () => pm.expect(body).to.have.all.keys('status', 'message', 'data'));",
+                  "pm.test('Sin contraseña expuesta', () => pm.expect(pm.response.text()).not.to.include('\"password\"'));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "14 - Eliminar pedido",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{base_url}}/pedidos/{{pedido_id}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+                  "const body = pm.response.json();",
+                  "pm.test('Formato consistente', () => pm.expect(body).to.have.all.keys('status', 'message', 'data'));",
+                  "pm.test('Sin contraseña expuesta', () => pm.expect(pm.response.text()).not.to.include('\"password\"'));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "15 - Pedido eliminado",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{base_url}}/pedidos/{{pedido_id}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP 404', () => pm.response.to.have.status(404));",
+                  "const body = pm.response.json();",
+                  "pm.test('Formato consistente', () => pm.expect(body).to.have.all.keys('status', 'message', 'data'));",
+                  "pm.test('Sin contraseña expuesta', () => pm.expect(pm.response.text()).not.to.include('\"password\"'));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "16 - Eliminar mi cuenta de prueba",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{base_url}}/usuarios/{{usuario_id}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+                  "const body = pm.response.json();",
+                  "pm.test('Formato consistente', () => pm.expect(body).to.have.all.keys('status', 'message', 'data'));",
+                  "pm.test('Sin contraseña expuesta', () => pm.expect(pm.response.text()).not.to.include('\"password\"'));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "17 - Token de cuenta eliminada",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{base_url}}/usuarios"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP 401', () => pm.response.to.have.status(401));",
+                  "const body = pm.response.json();",
+                  "pm.test('Formato consistente', () => pm.expect(body).to.have.all.keys('status', 'message', 'data'));",
+                  "pm.test('Sin contraseña expuesta', () => pm.expect(pm.response.text()).not.to.include('\"password\"'));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Carga manual",
+      "item": [
+        {
+          "name": "Subir imagen PNG o JPEG de hasta 2 MB",
+          "request": {
+            "method": "POST",
+            "url": "{{base_url}}/upload",
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "imagen",
+                  "type": "file",
+                  "src": []
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,873 @@
+[
+  {
+    "metodo": "GET",
+    "ruta": "/usuarios",
+    "autenticado": false,
+    "codigo": 401,
+    "respuesta": {
+      "status": "error",
+      "message": "Debes enviar Authorization: Bearer <token>.",
+      "data": null
+    }
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/pedidos",
+    "autenticado": false,
+    "codigo": 401,
+    "respuesta": {
+      "status": "error",
+      "message": "Debes enviar Authorization: Bearer <token>.",
+      "data": null
+    }
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/orm/usuarios-pedidos",
+    "autenticado": false,
+    "codigo": 401,
+    "respuesta": {
+      "status": "error",
+      "message": "Debes enviar Authorization: Bearer <token>.",
+      "data": null
+    }
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/upload",
+    "autenticado": false,
+    "codigo": 401,
+    "respuesta": {
+      "status": "error",
+      "message": "Debes enviar Authorization: Bearer <token>.",
+      "data": null
+    }
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/inexistente",
+    "autenticado": false,
+    "codigo": 404,
+    "respuesta": {
+      "status": "error",
+      "message": "Ruta no encontrada.",
+      "data": null
+    }
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/registro",
+    "autenticado": false,
+    "codigo": 400,
+    "respuesta": {
+      "status": "error",
+      "message": "Nombre es obligatorio y admite hasta 100 caracteres.",
+      "data": null
+    }
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/registro",
+    "autenticado": false,
+    "codigo": 400,
+    "respuesta": {
+      "status": "error",
+      "message": "Email inválido.",
+      "data": null
+    }
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/registro",
+    "autenticado": false,
+    "codigo": 400,
+    "respuesta": {
+      "status": "error",
+      "message": "La contraseña debe tener al menos 8 caracteres y hasta 72 bytes.",
+      "data": null
+    }
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/registro",
+    "autenticado": false,
+    "codigo": 201,
+    "respuesta": {
+      "status": "success",
+      "message": "Usuario registrado.",
+      "data": {
+        "id": 1,
+        "nombre": "Ana Prueba",
+        "email": "ana@example.test",
+        "imagen": null,
+        "created_at": "2026-10-13T22:40:08.510Z",
+        "perfil": {
+          "id": 1,
+          "biografia": "Estudiante"
+        }
+      }
+    }
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/registro",
+    "autenticado": false,
+    "codigo": 409,
+    "respuesta": {
+      "status": "error",
+      "message": "El registro ya existe. Revisa el email.",
+      "data": null
+    }
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/usuarios",
+    "autenticado": false,
+    "codigo": 201,
+    "respuesta": {
+      "status": "success",
+      "message": "Usuario registrado.",
+      "data": {
+        "id": 3,
+        "nombre": "Luis Prueba",
+        "email": "luis@example.test",
+        "imagen": null,
+        "created_at": "2026-10-13T22:40:08.720Z",
+        "perfil": {
+          "id": 2,
+          "biografia": "Estudiante"
+        }
+      }
+    }
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/login",
+    "autenticado": false,
+    "codigo": 401,
+    "respuesta": {
+      "status": "error",
+      "message": "Credenciales inválidas.",
+      "data": null
+    }
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/login",
+    "autenticado": false,
+    "codigo": 200,
+    "respuesta": {
+      "status": "success",
+      "message": "Sesión iniciada.",
+      "data": {
+        "token": "[JWT omitido]",
+        "usuario": {
+          "id": 1,
+          "nombre": "Ana Prueba",
+          "email": "ana@example.test",
+          "imagen": null
+        }
+      }
+    }
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/api/auth/login",
+    "autenticado": true,
+    "codigo": 200,
+    "respuesta": {
+      "status": "success",
+      "message": "Sesión iniciada.",
+      "data": {
+        "token": "[JWT omitido]",
+        "usuario": {
+          "id": 3,
+          "nombre": "Luis Prueba",
+          "email": "luis@example.test",
+          "imagen": null
+        }
+      }
+    }
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/usuarios",
+    "autenticado": true,
+    "codigo": 401,
+    "respuesta": {
+      "status": "error",
+      "message": "Token inválido o expirado.",
+      "data": null
+    }
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/usuarios",
+    "autenticado": true,
+    "codigo": 401,
+    "respuesta": {
+      "status": "error",
+      "message": "Token inválido o expirado.",
+      "data": null
+    }
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/usuarios",
+    "autenticado": true,
+    "codigo": 200,
+    "respuesta": {
+      "status": "success",
+      "message": "Usuarios encontrados.",
+      "data": [
+        {
+          "id": 1,
+          "nombre": "Ana Prueba",
+          "email": "ana@example.test",
+          "imagen": null,
+          "created_at": "2026-10-13T22:40:08.510Z"
+        },
+        {
+          "id": 3,
+          "nombre": "Luis Prueba",
+          "email": "luis@example.test",
+          "imagen": null,
+          "created_at": "2026-10-13T22:40:08.720Z"
+        }
+      ]
+    }
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/usuarios?buscar=Ana",
+    "autenticado": true,
+    "codigo": 200,
+    "respuesta": {
+      "status": "success",
+      "message": "Usuarios encontrados.",
+      "data": [
+        {
+          "id": 1,
+          "nombre": "Ana Prueba",
+          "email": "ana@example.test",
+          "imagen": null,
+          "created_at": "2026-10-13T22:40:08.510Z"
+        }
+      ]
+    }
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/usuarios/1",
+    "autenticado": true,
+    "codigo": 200,
+    "respuesta": {
+      "status": "success",
+      "message": "Operación realizada.",
+      "data": {
+        "id": 1,
+        "nombre": "Ana Prueba",
+        "email": "ana@example.test",
+        "imagen": null,
+        "created_at": "2026-10-13T22:40:08.510Z"
+      }
+    }
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/usuarios/1.5",
+    "autenticado": true,
+    "codigo": 400,
+    "respuesta": {
+      "status": "error",
+      "message": "El ID debe ser un entero positivo.",
+      "data": null
+    }
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/usuarios/999999",
+    "autenticado": true,
+    "codigo": 404,
+    "respuesta": {
+      "status": "error",
+      "message": "Usuario no encontrado.",
+      "data": null
+    }
+  },
+  {
+    "metodo": "PUT",
+    "ruta": "/usuarios/3",
+    "autenticado": true,
+    "codigo": 403,
+    "respuesta": {
+      "status": "error",
+      "message": "Solo puedes modificar tu cuenta.",
+      "data": null
+    }
+  },
+  {
+    "metodo": "DELETE",
+    "ruta": "/usuarios/3",
+    "autenticado": true,
+    "codigo": 403,
+    "respuesta": {
+      "status": "error",
+      "message": "Solo puedes modificar tu cuenta.",
+      "data": null
+    }
+  },
+  {
+    "metodo": "PUT",
+    "ruta": "/usuarios/1",
+    "autenticado": true,
+    "codigo": 409,
+    "respuesta": {
+      "status": "error",
+      "message": "El registro ya existe. Revisa el email.",
+      "data": null
+    }
+  },
+  {
+    "metodo": "PUT",
+    "ruta": "/usuarios/1",
+    "autenticado": true,
+    "codigo": 200,
+    "respuesta": {
+      "status": "success",
+      "message": "Usuario actualizado.",
+      "data": {
+        "id": 1,
+        "nombre": "Ana Actualizada",
+        "email": "ana@example.test",
+        "imagen": null,
+        "created_at": "2026-10-13T22:40:08.510Z"
+      }
+    }
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/pedidos",
+    "autenticado": true,
+    "codigo": 400,
+    "respuesta": {
+      "status": "error",
+      "message": "Monto debe ser positivo, con hasta 8 enteros y 2 decimales.",
+      "data": null
+    }
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/pedidos",
+    "autenticado": true,
+    "codigo": 400,
+    "respuesta": {
+      "status": "error",
+      "message": "Monto debe ser positivo, con hasta 8 enteros y 2 decimales.",
+      "data": null
+    }
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/pedidos",
+    "autenticado": true,
+    "codigo": 400,
+    "respuesta": {
+      "status": "error",
+      "message": "Monto debe ser positivo, con hasta 8 enteros y 2 decimales.",
+      "data": null
+    }
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/pedidos",
+    "autenticado": true,
+    "codigo": 400,
+    "respuesta": {
+      "status": "error",
+      "message": "Monto debe ser positivo, con hasta 8 enteros y 2 decimales.",
+      "data": null
+    }
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/pedidos",
+    "autenticado": true,
+    "codigo": 400,
+    "respuesta": {
+      "status": "error",
+      "message": "Se permiten hasta 5 etiquetas.",
+      "data": null
+    }
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/pedidos",
+    "autenticado": true,
+    "codigo": 201,
+    "respuesta": {
+      "status": "success",
+      "message": "Pedido creado.",
+      "data": {
+        "id": 1,
+        "usuario_id": 1,
+        "descripcion": "Repuestos",
+        "monto": "15000.00",
+        "estado": "pendiente",
+        "fecha": "2026-10-13T22:40:09.012Z",
+        "etiquetas": [
+          {
+            "id": 1,
+            "nombre": "taller"
+          },
+          {
+            "id": 2,
+            "nombre": "urgente"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/pedidos?buscar=Repuestos&estado=pendiente",
+    "autenticado": true,
+    "codigo": 200,
+    "respuesta": {
+      "status": "success",
+      "message": "Pedidos encontrados.",
+      "data": [
+        {
+          "id": 1,
+          "usuario_id": 1,
+          "descripcion": "Repuestos",
+          "monto": "15000.00",
+          "estado": "pendiente",
+          "fecha": "2026-10-13T22:40:09.012Z",
+          "etiquetas": [
+            {
+              "id": 1,
+              "nombre": "taller"
+            },
+            {
+              "id": 2,
+              "nombre": "urgente"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/pedidos?estado=pagado",
+    "autenticado": true,
+    "codigo": 200,
+    "respuesta": {
+      "status": "success",
+      "message": "Pedidos encontrados.",
+      "data": []
+    }
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/pedidos?estado=invalido",
+    "autenticado": true,
+    "codigo": 400,
+    "respuesta": {
+      "status": "error",
+      "message": "Estado inválido.",
+      "data": null
+    }
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/pedidos/1",
+    "autenticado": true,
+    "codigo": 200,
+    "respuesta": {
+      "status": "success",
+      "message": "Operación realizada.",
+      "data": {
+        "id": 1,
+        "usuario_id": 1,
+        "descripcion": "Repuestos",
+        "monto": "15000.00",
+        "estado": "pendiente",
+        "fecha": "2026-10-13T22:40:09.012Z",
+        "etiquetas": [
+          {
+            "id": 1,
+            "nombre": "taller"
+          },
+          {
+            "id": 2,
+            "nombre": "urgente"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/pedidos/abc",
+    "autenticado": true,
+    "codigo": 400,
+    "respuesta": {
+      "status": "error",
+      "message": "El ID debe ser un entero positivo.",
+      "data": null
+    }
+  },
+  {
+    "metodo": "PUT",
+    "ruta": "/pedidos/1",
+    "autenticado": true,
+    "codigo": 200,
+    "respuesta": {
+      "status": "success",
+      "message": "Pedido actualizado.",
+      "data": {
+        "id": 1,
+        "usuario_id": 1,
+        "descripcion": "Repuestos",
+        "monto": "15000.00",
+        "estado": "pagado",
+        "fecha": "2026-10-13T22:40:09.012Z",
+        "etiquetas": [
+          {
+            "id": 1,
+            "nombre": "taller"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/pedidos",
+    "autenticado": true,
+    "codigo": 201,
+    "respuesta": {
+      "status": "success",
+      "message": "Pedido creado.",
+      "data": {
+        "id": 2,
+        "usuario_id": 1,
+        "descripcion": "Repuestos",
+        "monto": "15000.00",
+        "estado": "pendiente",
+        "fecha": "2026-10-13T22:40:09.075Z",
+        "etiquetas": [
+          {
+            "id": 1,
+            "nombre": "taller"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/orm/usuarios-pedidos",
+    "autenticado": true,
+    "codigo": 200,
+    "respuesta": {
+      "status": "success",
+      "message": "Tu perfil, pedidos y etiquetas.",
+      "data": {
+        "id": 1,
+        "nombre": "Ana Actualizada",
+        "email": "ana@example.test",
+        "imagen": null,
+        "created_at": "2026-10-13T22:40:08.510Z",
+        "perfil": {
+          "id": 1,
+          "usuario_id": 1,
+          "biografia": "Estudiante"
+        },
+        "pedidos": [
+          {
+            "id": 1,
+            "usuario_id": 1,
+            "descripcion": "Repuestos",
+            "monto": "15000.00",
+            "estado": "pagado",
+            "fecha": "2026-10-13T22:40:09.012Z",
+            "etiquetas": [
+              {
+                "id": 1,
+                "nombre": "taller"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "usuario_id": 1,
+            "descripcion": "Repuestos",
+            "monto": "15000.00",
+            "estado": "pendiente",
+            "fecha": "2026-10-13T22:40:09.075Z",
+            "etiquetas": [
+              {
+                "id": 1,
+                "nombre": "taller"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/orm/usuarios",
+    "autenticado": true,
+    "codigo": 200,
+    "respuesta": {
+      "status": "success",
+      "message": "Usuarios consultados con Sequelize.",
+      "data": [
+        {
+          "id": 1,
+          "nombre": "Ana Actualizada",
+          "email": "ana@example.test",
+          "imagen": null,
+          "created_at": "2026-10-13T22:40:08.510Z"
+        },
+        {
+          "id": 3,
+          "nombre": "Luis Prueba",
+          "email": "luis@example.test",
+          "imagen": null,
+          "created_at": "2026-10-13T22:40:08.720Z"
+        }
+      ]
+    }
+  },
+  {
+    "metodo": "DELETE",
+    "ruta": "/pedidos/2",
+    "autenticado": true,
+    "codigo": 200,
+    "respuesta": {
+      "status": "success",
+      "message": "Pedido eliminado.",
+      "data": {
+        "id": 2,
+        "usuario_id": 1,
+        "descripcion": "Repuestos",
+        "monto": "15000.00",
+        "estado": "pendiente",
+        "fecha": "2026-10-13T22:40:09.075Z",
+        "etiquetas": [
+          {
+            "id": 1,
+            "nombre": "taller"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/pedidos/2",
+    "autenticado": true,
+    "codigo": 404,
+    "respuesta": {
+      "status": "error",
+      "message": "Pedido no encontrado.",
+      "data": null
+    }
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/pedidos",
+    "autenticado": true,
+    "codigo": 200,
+    "respuesta": {
+      "status": "success",
+      "message": "Pedidos encontrados.",
+      "data": []
+    }
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/pedidos/1",
+    "autenticado": true,
+    "codigo": 404,
+    "respuesta": {
+      "status": "error",
+      "message": "Pedido no encontrado.",
+      "data": null
+    }
+  },
+  {
+    "metodo": "PUT",
+    "ruta": "/pedidos/1",
+    "autenticado": true,
+    "codigo": 404,
+    "respuesta": {
+      "status": "error",
+      "message": "Pedido no encontrado.",
+      "data": null
+    }
+  },
+  {
+    "metodo": "DELETE",
+    "ruta": "/pedidos/1",
+    "autenticado": true,
+    "codigo": 404,
+    "respuesta": {
+      "status": "error",
+      "message": "Pedido no encontrado.",
+      "data": null
+    }
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/upload",
+    "autenticado": true,
+    "codigo": 400,
+    "respuesta": {
+      "status": "error",
+      "message": "Debes enviar un archivo en el campo imagen.",
+      "data": null
+    }
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/upload",
+    "autenticado": true,
+    "codigo": 400,
+    "respuesta": {
+      "status": "error",
+      "message": "Solo se aceptan imágenes JPG, JPEG y PNG.",
+      "data": null
+    }
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/upload",
+    "autenticado": true,
+    "codigo": 400,
+    "respuesta": {
+      "status": "error",
+      "message": "El contenido del archivo no corresponde a una imagen PNG o JPEG.",
+      "data": null
+    }
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/upload",
+    "autenticado": true,
+    "codigo": 400,
+    "respuesta": {
+      "status": "error",
+      "message": "La imagen supera el límite de 2 MB.",
+      "data": null
+    }
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/upload",
+    "autenticado": true,
+    "codigo": 200,
+    "respuesta": {
+      "status": "success",
+      "message": "Imagen actualizada.",
+      "data": {
+        "archivo": "avatar-3d4134a5-4aa6-49eb-9854-5fee970af899.png",
+        "path": "/uploads/avatar-3d4134a5-4aa6-49eb-9854-5fee970af899.png",
+        "usuario": {
+          "id": 1,
+          "nombre": "Ana Actualizada",
+          "email": "ana@example.test",
+          "imagen": "avatar-3d4134a5-4aa6-49eb-9854-5fee970af899.png"
+        }
+      }
+    }
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/api/auth/subir-imagen",
+    "autenticado": true,
+    "codigo": 200,
+    "respuesta": {
+      "status": "success",
+      "message": "Imagen actualizada.",
+      "data": {
+        "archivo": "avatar-c10a6e7e-03c5-4530-a4a5-eaea3c60009d.png",
+        "path": "/uploads/avatar-c10a6e7e-03c5-4530-a4a5-eaea3c60009d.png",
+        "usuario": {
+          "id": 1,
+          "nombre": "Ana Actualizada",
+          "email": "ana@example.test",
+          "imagen": "avatar-c10a6e7e-03c5-4530-a4a5-eaea3c60009d.png"
+        }
+      }
+    }
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/usuarios/1",
+    "autenticado": true,
+    "codigo": 200,
+    "respuesta": {
+      "status": "success",
+      "message": "Operación realizada.",
+      "data": {
+        "id": 1,
+        "nombre": "Ana Actualizada",
+        "email": "ana@example.test",
+        "imagen": "avatar-c10a6e7e-03c5-4530-a4a5-eaea3c60009d.png",
+        "created_at": "2026-10-13T22:40:08.510Z"
+      }
+    }
+  },
+  {
+    "metodo": "DELETE",
+    "ruta": "/usuarios/1",
+    "autenticado": true,
+    "codigo": 200,
+    "respuesta": {
+      "status": "success",
+      "message": "Usuario eliminado.",
+      "data": {
+        "id": 1,
+        "nombre": "Ana Actualizada",
+        "email": "ana@example.test",
+        "imagen": "avatar-c10a6e7e-03c5-4530-a4a5-eaea3c60009d.png",
+        "created_at": "2026-10-13T22:40:08.510Z"
+      }
+    }
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/usuarios",
+    "autenticado": true,
+    "codigo": 401,
+    "respuesta": {
+      "status": "error",
+      "message": "El usuario del token ya no existe.",
+      "data": null
+    }
+  },
+  {
+    "metodo": "DELETE",
+    "ruta": "/usuarios/3",
+    "autenticado": true,
+    "codigo": 200,
+    "respuesta": {
+      "status": "success",
+      "message": "Usuario eliminado.",
+      "data": {
+        "id": 3,
+        "nombre": "Luis Prueba",
+        "email": "luis@example.test",
+        "imagen": null,
+        "created_at": "2026-10-13T22:40:08.720Z"
+      }
+    }
+  }
+]

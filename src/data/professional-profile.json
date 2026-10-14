@@ -86,7 +86,9 @@
       "description": "Billetera educativa con registro, sesión, depósitos, transferencias e historial. Simula fondos y autenticación con almacenamiento del navegador.",
       "tools": "HTML, CSS, JavaScript, Bootstrap y jQuery",
       "learning": "Conectar formularios, eventos y estado persistente en un recorrido de usuario.",
-      "repository": "https://github.com/FranciscoDastres/prueba_final_modulo_2_js"
+      "repository": "https://github.com/FranciscoDastres/prueba_final_modulo_2_js",
+      "demo": "demos/alke-wallet/login.html",
+      "demoLabel": "Probar Alke Wallet"
     },
     {
       "module": "Módulo 4",
@@ -94,7 +96,9 @@
       "description": "Gestor de tareas con creación, edición, finalización, fechas e importación desde JSONPlaceholder. Las escrituras de la API externa son simuladas.",
       "tools": "JavaScript ES6, POO, módulos, Fetch API y localStorage",
       "learning": "Separar responsabilidades y manejar operaciones asíncronas y errores.",
-      "repository": "https://github.com/FranciscoDastres/prueba_modulo_4"
+      "repository": "https://github.com/FranciscoDastres/prueba_modulo_4",
+      "demo": "demos/taskflow/index.html",
+      "demoLabel": "Probar TaskFlow"
     },
     {
       "module": "Módulo 8",
@@ -102,7 +106,9 @@
       "description": "Backend educativo con registro, login, permisos por propietario, etiquetas y carga validada de imágenes. Cuenta con pruebas locales y documentación de ejecución.",
       "tools": "Node.js, Express, PostgreSQL, pg, Sequelize, JWT, bcrypt y Multer",
       "learning": "Integrar autenticación, autorización, relaciones y transacciones verificables.",
-      "repository": "https://github.com/FranciscoDastres/prueba_modulo_8"
+      "repository": "https://github.com/FranciscoDastres/prueba_modulo_8",
+      "demo": "demos/api/",
+      "demoLabel": "Explorar respuestas de la API"
     }
   ],
   "caseStudy": {

@@ -7,6 +7,14 @@
 - **Investigación y FODA:** https://franciscodastres.github.io/modulo_9_talento_digital/desarrollo-profesional/
 - **Repositorio:** https://github.com/FranciscoDastres/modulo_9_talento_digital
 
+## Demos interactivas
+
+- [Alke Wallet](https://franciscodastres.github.io/modulo_9_talento_digital/demos/alke-wallet/login.html): billetera destacada, acceso con datos de ejemplo, depósitos, transferencias, recepción, retiro e historial con fondos ficticios.
+- [TaskFlow](https://franciscodastres.github.io/modulo_9_talento_digital/demos/taskflow/index.html): crear, completar, editar, eliminar e importar tareas, con persistencia en el navegador.
+- [Explorador de la API](https://franciscodastres.github.io/modulo_9_talento_digital/demos/api/): consulta de 56 respuestas registradas en las pruebas de integración. Incluye filtros, selección y descarga de colección Postman. El servidor Express/PostgreSQL no se ejecuta en GitHub Pages.
+
+Las copias de Wallet y TaskFlow están en `public/demos/`. El visor de la API está en `src/pages/demos/api/`, con respuestas sanitizadas en `src/data/api-responses.json`. Todas las demos incluyen regreso al portafolio y mantienen Trebuchet MS. El registro original de pruebas de la API se conserva como evidencia; el visor no realiza solicitudes al backend.
+
 ## Estructura
 
 ```text

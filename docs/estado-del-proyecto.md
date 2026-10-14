@@ -48,3 +48,11 @@ El documento principal y el CV están en `entrega/`. Los paquetes `entrega_modul
 La estructura de Astro está directamente en la raíz del repositorio. Para revisar la aplicación: `npm ci`, `npm run build` y `npm run preview`; abrir la ruta `/modulo_9_talento_digital/`.
 
 La cuenta de LinkedIn no se modificó; se incluye su enlace existente. No se envió la entrega al aula, correo o Drive.
+
+## Demos de los proyectos
+
+Alke Wallet ocupa la presentación destacada y dispone de acceso con datos de ejemplo. Se comprobaron depósito, transferencia, retiro, recepción, historial y cierre de sesión. TaskFlow dispone de tareas locales y consumo de JSONPlaceholder; se corrigieron únicamente en su copia el listener de un temporizador ausente, los IDs duplicados al importar y la actualización del contador al eliminar.
+
+La API dispone de un explorador de 56 respuestas reales registradas durante las pruebas locales. El explorador ofrece filtros y descarga de Postman; no ejecuta Express ni PostgreSQL. La condición está indicada en la interfaz.
+
+La evidencia de estas comprobaciones está en `docs/evidencias/verificacion-demos.json`. Los tres proyectos se enlazan desde el portafolio y las demos incluyen navegación de regreso. El PDF contiene sus enlaces.

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskFlow | Gestión de Tareas</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/demo.css" />
+    <link rel="icon" href="data:," />
+  </head>
+  <body>
+    <div class="app-wrapper">
+      <nav class="demo-bar" aria-label="Navegación de la demo"><a href="../../#formacion">Volver al portafolio</a><a href="../alke-wallet/login.html">Probar Alke Wallet</a><button type="button" id="load-demo-tasks">Cargar ejemplo</button></nav>
+      <p class="demo-note">Demo educativa: las tareas se guardan en este navegador. JSONPlaceholder simula las escrituras de la API.</p>
+      <header class="app-header">
+        <div class="brand">
+          <div class="brand-icon">TF</div>
+          <div class="brand-text">
+            <h1>TaskFlow</h1>
+            <span>Gestión inteligente de tareas</span>
+          </div>
+        </div>
+        <div class="header-badge">Panel de control</div>
+      </header>
+
+      <div id="notification" class="notification" style="display: none"></div>
+
+      <section class="card">
+        <h2 class="card-title">Nueva tarea</h2>
+        <form id="task-form">
+          <div class="form-group">
+            <label for="task-title">Título</label>
+            <input
+              type="text"
+              id="task-title"
+              placeholder="Ej: Revisar estado de cuenta"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="task-desc">Descripción</label>
+            <input
+              type="text"
+              id="task-desc"
+              placeholder="Ej: Verificar movimientos del último trimestre"
+            />
+          </div>
+          <div class="form-group">
+            <label for="task-limit"
+              >Fecha límite
+              <span class="hint">(opcional, activa contador)</span></label
+            >
+            <input type="datetime-local" id="task-limit" />
+          </div>
+          <div class="form-footer">
+            <small id="char-counter">0 caracteres</small>
+            <button type="submit" class="btn btn-primary">Agregar tarea</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="actions-panel">
+        <div class="action-card">
+          <div class="action-icon">☁</div>
+          <div class="action-content">
+            <h3>API externa</h3>
+            <p>
+              Importa tareas desde JSONPlaceholder (con fecha límite de 5 min)
+            </p>
+            <button id="fetch-api-btn" class="btn btn-secondary">
+              Cargar tareas
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-header">
+          <h2 class="card-title">Mis tareas</h2>
+          <span class="task-count" id="task-count">0 tareas</span>
+        </div>
+        <ul id="task-list" class="task-list"></ul>
+      </section>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>

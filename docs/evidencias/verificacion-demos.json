@@ -1,0 +1,51 @@
+{
+  "fecha": "2026-10-13",
+  "estado": "Verificación local completada; publicación en preparación",
+  "wallet": {
+    "ruta": "demos/alke-wallet/login.html",
+    "fuente": "prueba_final_modulo_2_js",
+    "commit_fuente": "1564402a177385e699c4071e341d854b7ca41063",
+    "verificado": [
+      "acceso con ejemplo",
+      "depósito",
+      "transferencia",
+      "filtro de historial",
+      "retiro",
+      "recepción",
+      "cierre de sesión",
+      "regreso al portafolio"
+    ],
+    "saldo_inicial": 25000,
+    "deposito": 5000,
+    "transferencia": 3000,
+    "saldo_tras_transferencia": 27000
+  },
+  "taskflow": {
+    "ruta": "demos/taskflow/index.html",
+    "commit_fuente": "db2ac3ec9dd9b54bbf8e0a3521a4e08edd5cadc5",
+    "verificado": [
+      "datos de ejemplo",
+      "sin duplicados",
+      "crear",
+      "completar",
+      "persistir tras recarga",
+      "eliminar y actualizar contador",
+      "importar JSONPlaceholder"
+    ]
+  },
+  "api": {
+    "ruta": "demos/api/",
+    "tipo": "Visor de respuestas registradas; servidor no desplegado",
+    "solicitudes": 56,
+    "verificado": [
+      "filtrar por método y código",
+      "seleccionar solicitud",
+      "mostrar JSON válido"
+    ]
+  },
+  "mobile": {
+    "ancho_px": 390,
+    "desbordamiento_horizontal": false
+  },
+  "almacenamiento": "Claves separadas por demo; datos en el navegador"
+}

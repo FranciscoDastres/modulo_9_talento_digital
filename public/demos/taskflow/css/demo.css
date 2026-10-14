@@ -1,0 +1,9 @@
+.demo-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; font-size: 13px; }
+.demo-bar a { color: #8cdcff; text-underline-offset: 4px; }
+.demo-bar button { color: #e0f3ff; border: 1px solid #62738c; border-radius: 6px; background: #1e293b; padding: 8px 12px; cursor: pointer; }
+.demo-note { color: #94a3b8; font-size: 12px; line-height: 1.7; }
+.app-header { flex-wrap: wrap; gap: 12px; }
+.task-list li { min-width: 0; flex-wrap: wrap; gap: 12px; }
+.task-info { min-width: 0; overflow-wrap: anywhere; flex: 1 1 200px; }
+.task-actions { flex-wrap: wrap; }
+.demo-bar :focus-visible { outline: 2px solid #8cdcff; outline-offset: 3px; }

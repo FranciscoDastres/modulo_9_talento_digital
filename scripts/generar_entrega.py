@@ -104,7 +104,8 @@ story += heading('Tres proyectos del curso', 'La portada del portafolio diferenc
 for item in data['projects']:
     story += [p(item['title'] + ' | ' + item['module'], 'Heading2'), p(item['description']),
         p('Herramientas: ' + item['tools']), p('Aprendizaje: ' + item['learning']),
-        link('Repositorio y documentación', item['repository']), Spacer(1,18)]
+        link('Repositorio y documentación', item['repository']),
+        link(item['demoLabel'], portfolio + item['demo']), Spacer(1,12)]
 story += [link('Ver la sección Formación en el portafolio', portfolio + '#formacion'),
     p('Contacto: ' + data['email'], 'Small'), link('Perfil de LinkedIn', data['linkedin'], 'Small'), PageBreak()]
 story += heading('Caso de estudio', data['caseStudy']['title'])
