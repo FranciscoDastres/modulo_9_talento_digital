@@ -56,3 +56,5 @@ Alke Wallet ocupa la presentación destacada y dispone de acceso con datos de ej
 La API dispone de un explorador de 56 respuestas reales registradas durante las pruebas locales. El explorador ofrece filtros y descarga de Postman; no ejecuta Express ni PostgreSQL. La condición está indicada en la interfaz.
 
 La evidencia de estas comprobaciones está en `docs/evidencias/verificacion-demos.json`. Los tres proyectos se enlazan desde el portafolio y las demos incluyen navegación de regreso. El PDF contiene sus enlaces.
+
+Demos publicadas y comprobadas en GitHub Pages. Workflow: https://github.com/FranciscoDastres/modulo_9_talento_digital/actions/runs/38492762813. Commit de publicación: `2fab661690be202cbc895bbff71f975fd49aa6b8`. El PDF público coincide con el documento de entrega.

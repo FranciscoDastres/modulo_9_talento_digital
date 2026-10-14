@@ -1,6 +1,6 @@
 {
   "fecha": "2026-10-13",
-  "estado": "Verificación local completada; publicación en preparación",
+  "estado": "Publicado y verificado en GitHub Pages",
   "wallet": {
     "ruta": "demos/alke-wallet/login.html",
     "fuente": "prueba_final_modulo_2_js",
@@ -47,5 +47,56 @@
     "ancho_px": 390,
     "desbordamiento_horizontal": false
   },
-  "almacenamiento": "Claves separadas por demo; datos en el navegador"
+  "almacenamiento": "Claves separadas por demo; datos en el navegador",
+  "workflow": "https://github.com/FranciscoDastres/modulo_9_talento_digital/actions/runs/38492762813",
+  "commit_sitio": "2fab661690be202cbc895bbff71f975fd49aa6b8",
+  "verificacion_publica": {
+    "wallet": [
+      "acceso con ejemplo",
+      "depósito de 5000 y saldo 30000",
+      "regreso al portafolio"
+    ],
+    "taskflow": [
+      "ejemplo de dos tareas",
+      "contador de tareas"
+    ],
+    "api": [
+      "filtro HTTP 401",
+      "56 registros"
+    ],
+    "urls_http_200": [
+      {
+        "url": "https://franciscodastres.github.io/modulo_9_talento_digital/",
+        "codigo": 200
+      },
+      {
+        "url": "https://franciscodastres.github.io/modulo_9_talento_digital/demos/alke-wallet/login.html",
+        "codigo": 200
+      },
+      {
+        "url": "https://franciscodastres.github.io/modulo_9_talento_digital/demos/alke-wallet/menu.html",
+        "codigo": 200
+      },
+      {
+        "url": "https://franciscodastres.github.io/modulo_9_talento_digital/demos/alke-wallet/assets/vendor/jquery.min.js",
+        "codigo": 200
+      },
+      {
+        "url": "https://franciscodastres.github.io/modulo_9_talento_digital/demos/taskflow/index.html",
+        "codigo": 200
+      },
+      {
+        "url": "https://franciscodastres.github.io/modulo_9_talento_digital/demos/api/",
+        "codigo": 200
+      },
+      {
+        "url": "https://franciscodastres.github.io/modulo_9_talento_digital/documents/modulo-9/proyecto-modulo-9-francisco-meza-dastres.pdf",
+        "codigo": 200
+      },
+      {
+        "url": "https://franciscodastres.github.io/modulo_9_talento_digital/documents/modulo-9/modulo-8.postman_collection.json",
+        "codigo": 200
+      }
+    ]
+  }
 }
